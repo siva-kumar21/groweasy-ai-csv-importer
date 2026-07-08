@@ -1,0 +1,43 @@
+{
+  "name": "groweasy-ai-csv-importer",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AI-powered CSV importer for GrowEasy CRM leads.",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:server\" \"npm:dev:app\"",
+    "dev:app": "next dev app -p 3000",
+    "dev:server": "tsx watch server/src/index.ts",
+    "build": "next build app && tsc -p server/tsconfig.json",
+    "start": "concurrently \"npm:start:server\" \"npm:start:app\"",
+    "start:app": "next start app -p 3000",
+    "start:server": "node server/dist/index.js",
+    "test": "vitest run",
+    "lint": "next lint app"
+  },
+  "dependencies": {
+    "@types/multer": "^1.4.13",
+    "concurrently": "^9.2.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
+    "express": "^5.1.0",
+    "lucide-react": "^0.468.0",
+    "multer": "^2.0.2",
+    "next": "^15.4.0",
+    "openai": "^5.8.2",
+    "papaparse": "^5.5.3",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tsx": "^4.20.3",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.0.10",
+    "@types/papaparse": "^5.3.16",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.4"
+  }
+}
